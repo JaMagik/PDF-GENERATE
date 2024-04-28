@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>PROTOKÓŁ OPCJI DODATKOWYCH</title>
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
+    </head>
+<body>
+    
+    <h2>PROTOKÓŁ OPCJI DODATKOWYCH</h2>
+    
+    <div class="container">
+        <div>
+            DATA:
+            <label for="data"><input type="date" name="" id="date"></label>
+        </div>
+        <div>
+            IMIĘ I NAZWISKO / ADRES BUDOWY:
+            <label for="inwestor"><input type="text" name="" id="investor_name"></label>
+        </div>
+        <div>
+            NAZWA POMPY CIEPŁA:
+            <label for="nazwaPompy"><input type="text" name="" id="nazwaPompy"></label>
+        </div>
+        <div>
+            MOC POMPY CIEPŁA:
+            <label for="mocPompy"><input type="text" name="" id="mocPompy"></label>
+        </div>
+        <div>
+            <label for="zbiornikCWU"><input type="checkbox" checked name="" id="zbiornikCWU"></label>
+            Zbiornik CWU:
+        </div>
+        <div>
+            <label for="bufor"><input type="checkbox" checked  name="" id="bufor"></label>
+            BUFOR:
+        </div>
+        
+        <div>
+            <label for="1"><input type="checkbox" checked name="" id="lp1"></label>
+            Pompa do cyrkulacji z osprzętem i regulatorem czasowym:
+        </div>
+        <div>
+            <label for="2"><input type="checkbox" checked name="" id="lp2"></label>
+            Separator zanieczyszczeń magnetyczny (odmulnik):
+        </div>
+        <div>
+            <label for="3"><input type="checkbox" checked name="" id="lp3"></label>
+            Pompa obiegowa do instalacji C.O (LFP/WILO) z osprzętem:
+        </div>
+        <div>
+            <label for="4"><input type="checkbox" checked name="" id="lp4"></label>
+            Zbiornik ze stali nierdzewnej:
+        </div>
+        <div>
+            <label for="5"><input type="checkbox" checked name="" id="lp5"></label>
+            Regulator pokojowy:
+        </div>
+        <div>
+            <label for="6"><input type="checkbox" checked name="" id="lp6"></label>
+            Modem internetowy:
+        </div>
+        <div>
+            <label for="7"><input type="checkbox" checked name="" id="lp7"></label>
+            Licznik energii 3f lub 1f:
+        </div>
+        <div>
+            <label for="8"><input type="checkbox" checked name="" id="lp8"></label>
+            Kabel grzewczy z termostatem:
+        </div>
+        <div>
+            <label for="9"><input type="checkbox" checked name="" id="lp9"></label>
+            Wykonanie podbudowy pod pompę ciepła: 
+            Krawężniki przemysłowe ułożone na podsypce betonowej minimum B20 na głebokość 30-40cm:
+        </div>
+        <div>
+            <label for="10"><input type="checkbox" checked name="" id="lp10"></label>
+            Doprowadzenie kabla siłowego:
+            (liczone gdy odległość kabla zasilającego o odpowiednim przekroju jest większa niz 10 mb):
+        </div>
+        <div>
+            <label for="11"><input type="checkbox" checked name="" id="lp11"></label>
+            Demontaż starego źródła:
+        </div>
+        <div>
+            <label for="12"><input type="checkbox" checked name="" id="lp12"></label>
+            Montaż zabezpieczenia UPS do pompy ciepła:
+        </div>
+    
+        
+        
+        
+        
+        <!-- Kontener dla podpisu -->
+        <div class="signature-pad-container">
+            <h2 style="text-align: left; margin: 10px;">PODPIS INWESTORA</h2>
+            <canvas id="signature-pad" class="signature-pad" width="500px" height="200px"></canvas>
+            <br><h2 style="text-align: left; margin: 10px;">PODPIS WYKONAWCY</h2>
+            <canvas id="signature-pad-2" class="signature-pad" width="500px" height="200px"></canvas>
+        </div>
+        
+        <!-- Kontener dla podpisu -->
+        
+        
+        <button id="save">Generuj Protokół Odbioru z Podpisem</button>
+    </div>
+        <!-- Skrypty -->
+        <script src="script.js"></script>
+        <script src="resize.js"></script>
+</body>
+</html>

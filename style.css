@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type='text'],
+.form-group input[type='date'],
+.form-group input[type='number'] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.container{
+  width: 80vw;
+  margin: auto;
+  border: solid rgb(116, 116, 116);
+  padding: 5vw;
+  border-radius: 7%;
+  
+  
+}
+
+#signature-pad, #signature-pad-2 {
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 500px; /* Szerokość canvas na stałe ustawiona na 500px */
+    height: 200px; /* Wysokość canvas na stałe ustawiona na 200px */
+    cursor: crosshair;
+  }
+
+/* Przyciski */
+button {
+  background-color: #5cb85c; /* Kolor zielony */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: #4cae4c;
+}
+
+button[type='button']:last-of-type {
+  background-color: #d9534f; /* Kolor czerwony */
+}
+
+button[type='button']:last-of-type:hover {
+  background-color: #c9302c;
+}
+
+/* Stylowanie wierszy i komórek formularza */
+.row {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.row
+
+  
+  /* Stylowanie wierszy i komórek formularza */
+  .row {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+.row span, /* Numer Lp. */
+.row input[type='text'],
+.row button {
+  margin-right: 10px;
+  flex: 1; /* Dostosowanie flex-grow do wyrównania elementów w wierszu */
+}
+
+input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+  
+}
+
+.row span {
+  max-width: 40px;
+}
+
+.row input[type='text'] {
+  flex: 3; /* Inputy będą większe niż przycisk i numer Lp. */
+}
+
+.row button {
+  flex: none; /* Przycisk 'Usuń' będzie miał stały rozmiar */
+  padding: 5px 10px;
+  background-color: #f44336; /* Czerwony kolor tła dla przycisku 'Usuń' */
+  color: white;
+}
+
+.row button:hover {
+  background-color: #d32f2f; /* Ciemniejszy czerwony przy najechaniu */
+}
+
+/* Stylowanie kontenera na podpis */
+.signature-pad {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Styl dla podsumowania wartości na dole */
+.summary {
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: right;
+}
+
+.summary span {
+  display: inline-block;
+  min-width: 120px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+}
+
+/* Styl dla przycisku generowania PDF */
+#save {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #e71c24; /* Zielony kolor tła */
+}
+
+/* Dodatkowe przyciski dla interakcji z formularzem */
+.add-row-btn {
+  background-color: #2196F3; /* Niebieski kolor tła */
+  margin-top: 10px;
+}
+
+.add-row-btn:hover {
+  background-color: #0b7dda;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .form-group input[type='text'],
+  .form-group input[type='date'],
+  .form-group input[type='number'],
+  #signature-pad {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  /* Signature pad responsive adjustment */
+  #signature-pad {
+    max-width: 100%; /* Ensures the pad is not wider than the screen */
+    height: auto; /* Maintains aspect ratio */
+  }
+
+  .row,
+  .row button {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 5px;
+  }
+
+  .row span,
+  .row input[type='text'],
+  .row button {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .row input[type='text'] {
+    flex: none; /* Resets the flex-grow to default */
+  }
+
+  .row button {
+    width: auto; /* Allows the button to fit the content */
+    padding: 10px;
+  }
+
+  /* Smaller padding and margin for form elements */
+  .form-group {
+    margin-bottom: 5px;
+  }
+
+  .form-group label,
+  .summary span {
+    margin-bottom: 3px;
+  }
+
+  /* Smaller text for the summary and form labels */
+  .summary,
+  .form-group label {
+    font-size: 14px;
+  }
+
+  /* Adjust button sizes and padding */
+  button,
+  .add-row-btn,
+  #save {
+    padding: 8px 16px;
+    font-size: 14px; /* Slightly smaller font size for buttons */
+  }
+
+  /* Style adjustments for summary */
+  .summary {
+    margin-top: 10px;
+  }
+
+  /* Make the #save button more thumb-friendly */
+  #save {
+    padding: 12px 20px;
+  }
+}
+
+
+
+/* Media Query for screens smaller than 480px (Phones in portrait and smaller) */
+@media only screen and (max-width: 480px) {
+  h2 {
+    font-size: 18px; /* Smaller heading for very small screens */
+  }
+
+  /* Adjust the font size for the whole body for better readability on small screens */
+  body {
+    font-size: 14px;
+  }
+
+  /* Make sure the buttons are not too large */
+  button,
+  .add-row-btn,
+  #save {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
